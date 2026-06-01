@@ -264,7 +264,7 @@ body{font-family:'Cairo',sans-serif;direction:rtl;background:#f9f4ff;color:#222;
 
   <div class="faq-card">
     <div class="sec-title">أسئلة <span>شائعة</span></div>
-    <div class="faq-item"><p class="faq-q">💬 الجهاز أصلي ولا تقليد؟</p><p class="faq-a">جهاز أصلي 100% متاح حصري عند Shopax شوب اكس — مع ضمان الجودة الكاملة.</p></div>
+    <div class="faq-item"><p class="faq-q">💬 الجهاز أصلي ولا تقليد?</p><p class="faq-a">جهاز أصلي 100% متاح حصري عند Shopax شوب اكس — مع ضمان الجودة الكاملة.</p></div>
     <div class="faq-item"><p class="faq-q">💬 التوصيل بييجي لكل محافظات مصر؟</p><p class="faq-a">أيوه، بنوصل لجميع محافظات مصر خلال 2-4 أيام عمل بشحن ثابت 70 ج لجميع المحافظات.</p></div>
     <div class="faq-item"><p class="faq-q">💬 مناسب للبشرة الحساسة؟</p><p class="faq-a">أيوه، الجهاز مصمم للاستخدام الآمن على البشرة العادية والحساسة — استخدميه على بشرة نظيفة وجافة.</p></div>
     <div class="faq-item"><p class="faq-q">💬 طريقة الدفع إيه؟</p><p class="faq-a">كاش عند الاستلام فقط — مفيش دفع أونلاين مطلوب.</p></div>
@@ -394,7 +394,8 @@ body{font-family:'Cairo',sans-serif;direction:rtl;background:#f9f4ff;color:#222;
 </div>
 
 <script>
-const BLACKLIST = ['01107704932','01007872762'];
+// تفريغ البلاك ليست لتسهيل عمليات التست والتجريب
+const BLACKLIST = [];
 
 // تشغيل قائمة المحافظات المودرن
 function toggleDropdown() {
@@ -482,22 +483,22 @@ async function confirmModalOrder(){
   closePkgModal();
   
   const btn = document.getElementById('modalConfirmBtn');
-  btn.textContent='⏳ جاري تسجيل الطلب...';
-  btn.disabled=true;
+  btn.textContent = '⏳ جاري تسجيل الطلب...';
+  btn.disabled = true;
   
-  const name=document.getElementById('fname').value.trim();
-  const phone=document.getElementById('fphone').value.trim();
-  const gov=document.getElementById('fgov').value;
-  const address=document.getElementById('faddress').value.trim();
-  const orderId='SPX-'+Date.now().toString().slice(-6);
+  const name = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
+  const gov = document.getElementById('fgov').value;
+  const address = document.getElementById('faddress').value.trim();
+  const orderId = 'SPX-' + Date.now().toString().slice(-6);
   
   const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdh-_kMoUReXrVgf6xlHa62C1gHd-Vob6eHd0r2ZT7vTc5Lyg/formResponse';
   
   const formData = new URLSearchParams();
-  formData.append('entry.1764724888', name);    
-  formData.append('entry.1691244304', phone);   
-  formData.append('entry.27986790', gov);     
-  formData.append('entry.429402206', `${address} (الباكدج: ${selectedPkg.name} - السعر: ${selectedPkg.price} ج)`); 
+  formData.append('entry.1246109009', name);    // الـ ID الجديد والحقيقي للاسم
+  formData.append('entry.1813502525', phone);   // الـ ID الجديد والحقيقي للموبايل
+  formData.append('entry.64798488', gov);       // الـ ID الجديد والحقيقي للمحافظة
+  formData.append('entry.1246854119', `${address} (الباكدج: ${selectedPkg.name} - السعر: ${selectedPkg.price} ج)`); // الـ ID الجديد والحقيقي للعنوان
   
   try{
     fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: formData });
