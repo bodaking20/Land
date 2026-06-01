@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تم استلام طلبك بنجاح! | Shopax شوب اكس</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #7b2fff;
+            --purple-dark: #5a1fc8;
+            --purple-pale: #f3eaff;
+            --grad: linear-gradient(135deg, #7b2fff, #d63af9);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f4ecff;
+            color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .thank-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 30px 20px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(123, 47, 255, 0.15);
+            text-align: center;
+            border: 1px solid #ede0ff;
+        }
+        .icon-wrap {
+            width: 90px;
+            height: 90px;
+            background: var(--grad);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 15px rgba(123, 47, 255, 0.3);
+        }
+        h1 { font-size: 24px; font-weight: 900; color: #1a0540; margin-bottom: 8px; }
+        .sub-text { font-size: 14px; color: #666; margin-bottom: 20px; line-height: 1.6; }
+        .order-id-badge {
+            background: var(--grad);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 6px 18px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+        .summary-box {
+            background: #fdf8ff;
+            border: 1px solid #ede0ff;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: right;
+            margin-bottom: 24px;
+        }
+        .summary-title { font-size: 14px; font-weight: 700; color: var(--purple-dark); margin-bottom: 12px; border-bottom: 1px dashed #ede0ff; padding-bottom: 6px; }
+        .summary-item { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 8px; color: #444; }
+        .summary-item strong { color: #000; }
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f8f2ff;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            text-align: right;
+            font-size: 13px;
+            font-weight: 600;
+            color: #444;
+            border: 1px solid #ede0ff;
+        }
+        .info-icon { font-size: 18px; }
+        .btn-back {
+            width: 100%;
+            padding: 14px;
+            background: var(--grad);
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            margin-top: 14px;
+            box-shadow: 0 4px 14px rgba(123, 47, 255, 0.4);
+            text-decoration: none;
+            display: block;
+        }
+        .footer-text { font-size: 11px; color: #aaa; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="thank-card">
+    <div class="icon-wrap">🎉</div>
+    <h1>تم استلام طلبك بنجاح!</h1>
+    <p class="sub-text">شكراً لثقتك في Shopax شوب اكس 💜<br>سيتم التواصل معك قريباً لتأكيد الطلب وشحن المنتج.</p>
+    
+    <div class="order-id-badge">🏷️ رقم الطلب: <span id="ordId">------</span></div>
+
+    <div class="summary-box">
+        <div class="summary-title">📦 ملخص طلبك:</div>
+        <div class="summary-item">🛍️ المنتج: <strong>جهاز إزالة الشعر بالليزر المنزلي</strong></div>
+        <div class="summary-item">📦 الكمية: <strong id="ordPkg">قطعة واحدة</strong></div>
+        <div class="summary-item">💰 السعر: <strong id="ordPrice">249 ج</strong></div>
+        <div class="summary-item">🚚 الشحن: <strong style="color: #2e7d32;">مجاني</strong></div>
+        <div class="summary-item">💳 الدفع: <strong>عند الاستلام</strong></div>
+    </div>
+
+    <div class="info-row">
+        <span class="info-icon">✅</span>
+        <span>تم تسجيل طلبك في نظامنا بنجاح</span>
+    </div>
+    <div class="info-row">
+        <span class="info-icon">📞</span>
+        <span>سيتصل بك فريقنا خلال 24 ساعة</span>
+    </div>
+    <div class="info-row">
+        <span class="info-icon">🚚</span>
+        <span>التوصيل خلال 2-4 أيام عمل</span>
+    </div>
+
+    <a href="index.html" class="btn-back">🛍️ تصفحي منتجاتنا الأخرى</a>
+    
+    <div class="footer-text">© 2026 Shopax شوب اكس — جميع الحقوق محفوظة</div>
+</div>
+
+<script>
+    // كود ذكي لقراءة البيانات المستخرجة من الرابط وعرضها في الصفحة أوتوماتيكياً
+    window.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const order = urlParams.get('order') || 'SPX-' + Math.floor(Math.random() * 900000 + 100000);
+        const pkg = urlParams.get('pkg') || 'قطعة واحدة';
+        const price = urlParams.get('price') || '249';
+
+        document.getElementById('ordId').textContent = order;
+        document.getElementById('ordPkg').textContent = pkg;
+        document.getElementById('ordPrice').textContent = price + ' ج';
+    });
+</script>
+
+</body>
+</html>
+
